@@ -1,3 +1,3 @@
 ## Project Demonstration
 
-![Project Demonstration](proof.mp4)
+![Project Demonstration](proof)
