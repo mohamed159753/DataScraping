@@ -7,13 +7,11 @@ def get_price_from_aziza(product_id):
     
     url = f'https://aziza.tn/fr/{product_id}.html'
     
-    # Make a request to the URL
     response = requests.get(url, verify=False)
     
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
         
-        # Find the product price meta tag
         meta_tag = soup.find('meta', itemprop='price')
         
         if meta_tag:
@@ -24,7 +22,6 @@ def get_price_from_aziza(product_id):
     else:
         return None  
 
-# you can test with this id 10004518 which is has the price of 3100 you can check in this page https://aziza.tn/fr/10004518.html"
 product_id = input("give the id of the product : ")
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 price = get_price_from_aziza(product_id)
